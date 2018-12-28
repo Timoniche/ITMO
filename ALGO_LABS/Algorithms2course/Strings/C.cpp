@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+std::vector<long long> buildZ(std::string& s) {
+    unsigned long n = s.length();
+    std::vector<long long> ret(n);
+    long long l = 0, r = 0;
+    for (size_t i = 1; i < n; ++i) {
+        ret[i] = std::max(std::min((long long)(r - i), (long long) ret[i - l]), 0ll);
+        while (i + ret[i] < n && s[ret[i]] == s[i + ret[i]]) ret[i]++;
+        if (ret[i] + i > r) {
+            r = static_cast<long long int>(i + ret[i]);
+            l = static_cast<long long int>(i);
+        }
+    }
+    return std::move(ret);
+
+}
+
+int main() {
+    std::string s;
+    std::cin >> s;
+    std::vector ans = std::move(buildZ(s));
+    for (int i = 1; i < ans.size(); i++) {
+        std::cout << ans[i] << " ";
+    }
+    return 0;
+}
+
