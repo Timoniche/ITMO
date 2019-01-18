@@ -3,6 +3,7 @@
 **Intrusive container**
 
 Intrusive container does not store copies of passed objects, but it stores the objects themselves. The additional data needed to insert the object in the container must be provided by the object itself.  
+ assert(&myclass == &list.front());
 **Heterogeneous lookup**
 
 **shared_ptr**  
@@ -101,5 +102,6 @@ Intrusive container does not store copies of passed objects, but it stores the o
 
 **PLT/GOT**
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzNDUzOTc1MywtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbLTYzMzY5MzYxNywyMDM0NTM5NzUzLC0yMD
+g4NzQ2NjEyXX0=
 -->
