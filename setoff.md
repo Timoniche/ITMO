@@ -34,34 +34,34 @@ Intrusive container does not store copies of passed objects, but it stores the o
 
 **Pointer-to-member**
 
-std::optional, differences with std::unique_ptr  
-Pimpl
+**std::optional, differences with std::unique_ptr**  
+**Pimpl**
 
-std::variant, usage
+**std::variant, usage**
 
-Types of parallelism  
-Std::thread, join and detach  
-Race condition  
-Mutex  
-_Spinlock_  
-Futex(maybe optional)  
-std::lock_guard  
-Deadlock  
-Atomic types  
-std::condition_variable  
-Spurious wakeups (fake wakeups)  
-std::unique_lock  
-Amdahl’s law
+**Types of parallelism**  
+**Std::thread, join and detach**  
+**Race condition**  
+**Mutex**  
+**_Spinlock_**  
+**Futex(maybe optional)**  
+**std::lock_guard**  
+**Deadlock**  
+**Atomic types**  
+**std::condition_variable**  
+**Spurious wakeups (fake wakeups)**  
+**std::unique_lock**  
+**Amdahl’s law**
 
-std::future + std::promise  
-std::async  
+**std::future + std::promise**  
+**std::async**  
   
-Thread pool  
-Thread_local  
-Transactional memory (software and hardware)  
-map, reduce, filter  
-Asynchronous io (maybe Boost.Asio?)  
-Sharing  
+**Thread pool**  
+**Thread_local**  
+**Transactional memory (software and hardware)**  
+**map, reduce, filter**  
+**Asynchronous io (maybe Boost.Asio?)**  
+**Sharing**  
 False sharing  
 Message loop  
 Fiber(stackful coroutine? answer -> (it can be regarded as implementation of co’s concept, but in general this implementation use some ideas of stackfullness))
@@ -101,5 +101,6 @@ Creating inode without creating file in fs
 
 PLT/GOT
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAzMDc5NjkwNSwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbLTE0NzU5OTE3MDMsLTIwODg3NDY2MTJdfQ
+==
 -->
