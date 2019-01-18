@@ -92,14 +92,14 @@ Intrusive container does not store copies of passed objects, but it stores the o
 **Lambdas and move semantics**  
 **Std::initializer_list and move semantics**
 
-Filesystems  
-FAT  
-Inode  
-File descriptors  
-File locks  
+**Filesystems**  
+**FAT**  
+**Inode**  
+**File descriptors**  
+**File locks**  
 **Creating inode without creating file in fs**
 
 **PLT/GOT**
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg4MzgwMDU1LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbMjAzNDUzOTc1MywtMjA4ODc0NjYxMl19
 -->
