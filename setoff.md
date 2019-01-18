@@ -3,37 +3,36 @@
 **Intrusive container**
 
 Intrusive container does not store copies of passed objects, but it stores the objects themselves. The additional data needed to insert the object in the container must be provided by the object itself.  
-Heterogeneous lookup
+**Heterogeneous lookup**
 
 **shared_ptr**  
 **weak_ptr**
 
 **(N)RVO**  
-Rvalue references  
-**Move semantics, _std::move_, reference** 
-collapsing  
-Perfect forwarding, _std::forward_
+**Rvalue references**  
+**Move semantics, _std::move_, reference collapsing**  
+**Perfect forwarding, _std::forward_**
 
-Auto  
-Lambdas  
-_std::function_  
-Type erasure
+**Auto**  
+**Lambdas**  
+**_std::function_**  
+**Type erasure**
 
-Variadic templates  
-_std::bind_
+**Variadic templates**  
+**_std::bind_**
 
-_Signals_  
-Reentrancy
+**_Signals_**  
+**Reentrancy**
 
-Decltype(expr)  
-Decltype(variable)  
-Prvalue, xvalue, lvalue
+**Decltype(expr)**  
+**Decltype(variable)**  
+**Prvalue, xvalue, lvalue**
 
-_Nullptr_t_
+**_Nullptr_t_**
 
-void_t
+**void_t**
 
-Pointer-to-member
+**Pointer-to-member**
 
 std::optional, differences with std::unique_ptr  
 Pimpl
@@ -102,5 +101,5 @@ Creating inode without creating file in fs
 
 PLT/GOT
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk5ODE2OTI1NywtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbMTAzMDc5NjkwNSwtMjA4ODc0NjYxMl19
 -->
