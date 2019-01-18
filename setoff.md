@@ -9,6 +9,7 @@ Intrusive container does not store copies of passed objects, but it stores the o
 -   Functions taking InputIterator parameters modify the objects made available by those parameters.
 
 **Heterogeneous lookup**
+http://cpptrivia.blogspot.com/2017/10/c14-heterogeneous-lookup-in-associative.html
 
 **shared_ptr**  
 **weak_ptr**
@@ -106,6 +107,6 @@ Intrusive container does not store copies of passed objects, but it stores the o
 
 **PLT/GOT**
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3OTE1NDI1NywtNjMzNjkzNjE3LDIwMz
-Q1Mzk3NTMsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbMjA3NjAxMDYxNiwxMjc5MTU0MjU3LC02Mz
+M2OTM2MTcsMjAzNDUzOTc1MywtMjA4ODc0NjYxMl19
 -->
