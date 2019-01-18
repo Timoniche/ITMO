@@ -3,7 +3,11 @@
 **Intrusive container**
 
 Intrusive container does not store copies of passed objects, but it stores the objects themselves. The additional data needed to insert the object in the container must be provided by the object itself.  
- assert(&myclass == &list.front());
+
+-   None of them allocate memory, and correspondingly, more of them are  adorned with noexcept (except for the unordered containers, for which the allocator might throw, and for the associative containers, where the comparison object might throw).
+-   Serveral functions take parameters by reference, instead of by const reference.
+-   Functions taking InputIterator parameters modify the objects made available by those parameters.
+
 **Heterogeneous lookup**
 
 **shared_ptr**  
@@ -102,6 +106,6 @@ Intrusive container does not store copies of passed objects, but it stores the o
 
 **PLT/GOT**
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzMzY5MzYxNywyMDM0NTM5NzUzLC0yMD
-g4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbMTI3OTE1NDI1NywtNjMzNjkzNjE3LDIwMz
+Q1Mzk3NTMsLTIwODg3NDY2MTJdfQ==
 -->
