@@ -62,45 +62,44 @@ Intrusive container does not store copies of passed objects, but it stores the o
 **map, reduce, filter**  
 **Asynchronous io (maybe Boost.Asio?)**  
 **Sharing**  
-False sharing  
-Message loop  
-Fiber(stackful coroutine? answer -> (it can be regarded as implementation of co’s concept, but in general this implementation use some ideas of stackfullness))
+**False sharing**  
+**Message loop**  
+**Fiber**(stackful coroutine? answer -> (it can be regarded as implementation of co’s concept, but in general this implementation use some ideas of stackfullness))
 
-std::transform
+**std::transform**
 
-Push and pull strategies
+**Push and pull strategies**
 
-coroutines(stackful and stackless)
+**coroutines(stackful and stackless)**
 
-C++11 new features:  
-Rvalue references for *this  
-On-declaration initialization of non-static members  
-Enum classes
+**C++11 new features:**  
+**Rvalue references for *this**  
+**On-declaration initialization of non-static members**  
+**Enum classes**
 
-Uniform initialization  
-std::initializer_list
+**Uniform initialization**  
+**std::initializer_list**
 
-Generalized attributes
+**Generalized attributes**
 
-Unicode  
-Code point  
-Code unit  
-Utf-[8|16|32]
+**Unicode**  
+**Code point**  
+**Code unit**  
+**Utf-[8|16|32]**
 
-С++11 flaws:  
-std::cbegin, std::cend  
-Lambdas and move semantics  
-Std::initializer_list and move semantics
+**С++11 flaws:**  
+**std::cbegin, std::cend**  
+**Lambdas and move semantics**  
+**Std::initializer_list and move semantics**
 
 Filesystems  
 FAT  
 Inode  
 File descriptors  
 File locks  
-Creating inode without creating file in fs
+**Creating inode without creating file in fs**
 
-PLT/GOT
+**PLT/GOT**
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NzU5OTE3MDMsLTIwODg3NDY2MTJdfQ
-==
+eyJoaXN0b3J5IjpbLTg4MzgwMDU1LC0yMDg4NzQ2NjEyXX0=
 -->
