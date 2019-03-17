@@ -37,8 +37,7 @@ private:
                 break;
             }
         }
-        IExpression *ret = new Variable(res);
-        return ret;
+        return new Variable(res);
     }
 
     IExpression *negate() {
@@ -47,10 +46,7 @@ private:
             return new Negate(negate());
         } else if (c == '(') {
             IExpression *ret = implication();
-            c = next_char();
-            if (c != ')') {
-                pos--;
-            }
+            pos++;
             return ret;
         }
         pos--;

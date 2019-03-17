@@ -12,7 +12,10 @@ _____________________________________________________
 */
 int main() {
     std::string expression;
-    std::cin >> expression;
+    std::string s;
+    while (std::cin >> s) {
+        expression += s;
+    }
     Parser p(expression);
     std::cout << p.make_tree();
     return 0;
