@@ -19,6 +19,7 @@ enum Token {
 public class LexicalAnalyzer {
     private InputStream is;
     private int curChar;
+    private char var;
     private int curPos;
     private Token curToken;
 
@@ -46,7 +47,6 @@ public class LexicalAnalyzer {
             nextChar();
         }
         switch (curChar) {
-            //OR, XOR, AND, NOT, VAR, END
             case '(':
                 nextChar();
                 curToken = Token.LPAREN;
@@ -56,6 +56,7 @@ public class LexicalAnalyzer {
                 curToken = Token.RPAREN;
                 break;
             case 'o':
+                var = (char) curChar;
                 nextChar();
                 if (curChar == 'r') {
                     nextChar();
@@ -65,6 +66,7 @@ public class LexicalAnalyzer {
                 }
                 break;
             case 'x':
+                var = (char) curChar;
                 nextChar();
                 if (curChar == 'o') {
                     nextChar();
@@ -75,6 +77,7 @@ public class LexicalAnalyzer {
                 }
                 break;
             case 'a':
+                var = (char) curChar;
                 nextChar();
                 if (curChar == 'n') {
                     nextChar();
@@ -85,6 +88,7 @@ public class LexicalAnalyzer {
                 }
                 break;
             case 'n':
+                var = (char) curChar;
                 nextChar();
                 if (curChar == 'o') {
                     nextChar();
@@ -98,9 +102,10 @@ public class LexicalAnalyzer {
                 curToken = Token.END;
                 break;
             default:
+                var = (char) curChar;
                 nextChar();
                 curToken = Token.VAR;
-                if (curChar != '(' && curChar != ')' && !isBlank(curChar)) {
+                if (curChar != '(' && curChar != ')' && !isBlank(curChar) && curChar != -1) {
                     throw new ParseException("Illegal character" + (char) curChar, curPos);
                 }
         }
@@ -112,6 +117,10 @@ public class LexicalAnalyzer {
 
     public int curPos() {
         return curPos();
+    }
+
+    public char getVar() {
+        return var;
     }
 
 
