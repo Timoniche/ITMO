@@ -116,7 +116,7 @@ public class LexicalAnalyzer {
     }
 
     public int curPos() {
-        return curPos();
+        return curPos;
     }
 
     public char getVar() {

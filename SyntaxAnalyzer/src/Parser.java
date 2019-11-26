@@ -9,7 +9,7 @@ public class Parser {
             case NOT:
             case VAR:
             case LPAREN:
-                return new Tree("S", A(), SPrime());
+                return new Tree("S", B(), SPrime());
             case END:
                 return new Tree("S", new Tree("ε"));
             default:
@@ -18,46 +18,64 @@ public class Parser {
         }
     }
 
+//    Tree SPrime() throws ParseException {
+//        switch (lex.curToken()) {
+//            case OR:
+//                lex.nextToken();
+//                return new Tree("S'", new Tree("or"), A(), SPrime());
+//            case END:
+//            case RPAREN:
+//                return new Tree("S'", new Tree("ε"));
+//            default:
+//                throw new ParseException("Wrong token: " + lex.curToken() +
+//                        ", Offset: ", lex.curPos());
+//        }
+//    }
+
     Tree SPrime() throws ParseException {
-        switch (lex.curToken()) {
-            case OR:
-                lex.nextToken();
-                return new Tree("S'", new Tree("or"), A(), SPrime());
-            case END:
-            case RPAREN:
-                return new Tree("S'", new Tree("ε"));
-            default:
-                throw new ParseException("Wrong token: " + lex.curToken() +
-                        ", Offset: ", lex.curPos());
-        }
+    switch (lex.curToken()) {
+        case OR:
+            lex.nextToken();
+            return new Tree("S'", new Tree("or"), B(), SPrime());
+        case XOR:
+            lex.nextToken();
+            return new Tree("S'", new Tree("xor"), B(), SPrime());
+        case END:
+        case RPAREN:
+            return new Tree("S'", new Tree("ε"));
+        default:
+            throw new ParseException("Wrong token: " + lex.curToken() +
+                    ", Offset: ", lex.curPos());
     }
+}
 
-    Tree A() throws ParseException {
-        switch (lex.curToken()) {
-            case NOT:
-            case VAR:
-            case LPAREN:
-                return new Tree("A", B(), APrime());
-            default:
-                throw new ParseException("Wrong token: " + lex.curToken() +
-                        ", Offset: ", lex.curPos());
-        }
-    }
+//    Tree A() throws ParseException {
+//        switch (lex.curToken()) {
+//            case NOT:
+//            case VAR:
+//            case LPAREN:
+//                return new Tree("A", B(), APrime());
+//            default:
+//                throw new ParseException("Wrong token: " + lex.curToken() +
+//                        ", Offset: ", lex.curPos());
+//        }
+//    }
 
-    Tree APrime() throws ParseException {
-        switch (lex.curToken()) {
-            case XOR:
-                lex.nextToken();
-                return new Tree("A'", new Tree("xor"), B(), APrime());
-            case END:
-            case RPAREN:
-            case OR:
-                return new Tree("A'", new Tree("ε"));
-            default:
-                throw new ParseException("Wrong token: " + lex.curToken() +
-                        ", Offset: ", lex.curPos());
-        }
-    }
+//    Tree APrime() throws ParseException {
+//        switch (lex.curToken()) {
+//            case XOR:
+//                lex.nextToken();
+//                return new Tree("A'", new Tree("xor"), B(), APrime());
+//            case END:
+//            case RPAREN:
+//            case OR:
+//                return new Tree("A'", new Tree("ε"));
+//            default:
+//                throw new ParseException("Wrong token: " + lex.curToken() +
+//                        ", Offset: ", lex.curPos());
+//        }
+//    }
+
 
     Tree B() throws ParseException {
         switch (lex.curToken()) {
@@ -131,6 +149,11 @@ public class Parser {
     Tree parse(InputStream is) throws ParseException {
         lex = new LexicalAnalyzer(is);
         lex.nextToken();
-        return S();
+        Tree ret = S();
+        if (lex.curToken() == Token.END) {
+            return ret;
+        }
+        throw new ParseException("Expected end " +
+                "Offset: ", lex.curPos());
     }
 }
